@@ -24,9 +24,9 @@ export default function Navbar({ cartCount, onCartOpen, onSearchOpen }: NavbarPr
 
   const navLinks = [
     { name: "Products", href: "#products" },
-    { name: "The Science", href: "#science" },
     { name: "Philosophy", href: "#philosophy" },
-    { name: "Reviews", href: "#reviews" },
+    { name: "About Us", href: "#about" },
+    { name: "Contact Us", href: "#contact" },
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
