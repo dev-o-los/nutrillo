@@ -19,29 +19,43 @@ interface SearchModalProps {
 
 const PRODUCTS: SearchProduct[] = [
   {
-    id: "vitality-greens",
-    name: "Vitality Greens",
-    category: "Superfood & Prebiotic Complex",
-    price: "₹64.00",
-    image: "/images/vitality_greens.png",
+    id: "trail-mix",
+    name: "Seeds & Dried Fruits Trail Mix",
+    category: "Nutritious Blend for Energy & Wellness",
+    price: "₹199.00",
+    image: "/images/trail_mix.jpg",
   },
   {
-    id: "cognitive-core",
-    name: "Cognitive Core",
-    category: "Nootropic Neural Support",
-    price: "₹82.00",
-    image: "/images/cognitive_core.png",
+    id: "salted-granola",
+    name: "Salted Granola",
+    category: "Nutritious Blend for Health & Wellness",
+    price: "₹179.00",
+    image: "/images/salted_granola.jpg",
   },
   {
-    id: "elite-plant-protein",
-    name: "Elite Plant Protein",
-    category: "Multi-Source Vegan Blend",
-    price: "₹75.00",
-    image: "/images/plant_protein.png",
+    id: "chocolate-powder",
+    name: "Daily Nutrition Powder - Chocolate",
+    category: "Nutritious Blend for Energy & Health",
+    price: "₹199.00",
+    image: "/images/chocolate_powder.jpg",
+  },
+  {
+    id: "vanilla-powder",
+    name: "Daily Nutrition Powder - Vanilla",
+    category: "Complete Nutrition for Everyday Health",
+    price: "₹199.00",
+    image: "/images/vanilla_powder.jpg",
+  },
+  {
+    id: "calcium-laddoo",
+    name: "Calcium Rich Laddoo",
+    category: "Natural Source for Stronger Bones & Health",
+    price: "₹179.00",
+    image: "/images/calcium_laddoo.jpg",
   },
 ];
 
-const SUGGESTIONS = ["Superfoods", "Nootropics", "Protein", "Bioavailability", "Clinical Lab Reports"];
+const SUGGESTIONS = ["Trail Mix", "Granola", "Daily Nutrition", "Laddoo", "Calcium", "Organic Blend"];
 
 export default function SearchModal({ isOpen, onClose, onSelectProduct }: SearchModalProps) {
   const [query, setQuery] = useState("");
