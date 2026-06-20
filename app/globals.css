@@ -1,26 +1,173 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f9fb;
+  --foreground: #191c1e;
+  
+  --primary: #003527;
+  --secondary: #476800;
+  --on-surface-variant: #404944;
+  --primary-container: #064e3b;
+  --error: #ba1a1a;
+  --outline: #707974;
+  --tertiary: #735c00;
+  --tertiary-container: #cea700;
+  --on-primary-fixed: #002117;
+  --on-tertiary: #ffffff;
+  --tertiary-fixed: #ffe083;
+  --surface-bright: #f7f9fb;
+  --on-surface: #191c1e;
+  --on-tertiary-container: #4e3e00;
+  --on-primary-container: #80bea6;
+  --on-secondary-fixed: #131f00;
+  --on-secondary: #ffffff;
+  --inverse-surface: #2d3133;
+  --error-container: #ffdad6;
+  --surface-variant: #e0e3e5;
+  --on-error: #ffffff;
+  --surface-tint: #2b6954;
+  --on-primary: #ffffff;
+  --inverse-primary: #95d3ba;
+  --secondary-fixed-dim: #a4d64c;
+  --on-secondary-container: #4b6d00;
+  --outline-variant: #bfc9c3;
+  --surface-container: #eceef0;
+  --tertiary-fixed-dim: #eec200;
+  --on-secondary-fixed-variant: #354e00;
+  --on-background: #191c1e;
+  --surface-container-low: #f2f4f6;
+  --primary-fixed-dim: #95d3ba;
+  --surface: #f7f9fb;
+  --surface-container-high: #e6e8ea;
+  --secondary-fixed: #bff365;
+  --secondary-container: #bcf063;
+  --surface-container-highest: #e0e3e5;
+  --surface-dim: #d8dadc;
+  --primary-fixed: #b0f0d6;
+  --inverse-on-surface: #eff1f3;
+  --on-primary-fixed-variant: #0b513d;
+  --on-tertiary-fixed: #231b00;
+  --surface-container-lowest: #ffffff;
+  --on-error-container: #93000a;
+  --on-tertiary-fixed-variant: #574500;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+  
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-primary-container: var(--primary-container);
+  --color-error: var(--error);
+  --color-outline: var(--outline);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-on-primary-fixed: var(--on-primary-fixed);
+  --color-on-tertiary: var(--on-tertiary);
+  --color-tertiary-fixed: var(--tertiary-fixed);
+  --color-surface-bright: var(--surface-bright);
+  --color-on-surface: var(--on-surface);
+  --color-on-tertiary-container: var(--on-tertiary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-on-secondary-fixed: var(--on-secondary-fixed);
+  --color-on-secondary: var(--on-secondary);
+  --color-inverse-surface: var(--inverse-surface);
+  --color-error-container: var(--error-container);
+  --color-surface-variant: var(--surface-variant);
+  --color-on-error: var(--on-error);
+  --color-surface-tint: var(--surface-tint);
+  --color-on-primary: var(--on-primary);
+  --color-inverse-primary: var(--inverse-primary);
+  --color-secondary-fixed-dim: var(--secondary-fixed-dim);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --color-outline-variant: var(--outline-variant);
+  --color-surface-container: var(--surface-container);
+  --color-tertiary-fixed-dim: var(--tertiary-fixed-dim);
+  --color-on-secondary-fixed-variant: var(--on-secondary-fixed-variant);
+  --color-on-background: var(--on-background);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-primary-fixed-dim: var(--primary-fixed-dim);
+  --color-surface: var(--surface);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-secondary-fixed: var(--secondary-fixed);
+  --color-secondary-container: var(--secondary-container);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-surface-dim: var(--surface-dim);
+  --color-primary-fixed: var(--primary-fixed);
+  --color-inverse-on-surface: var(--inverse-on-surface);
+  --color-on-primary-fixed-variant: var(--on-primary-fixed-variant);
+  --color-on-tertiary-fixed: var(--on-tertiary-fixed);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-on-error-container: var(--on-error-container);
+  --color-on-tertiary-fixed-variant: var(--on-tertiary-fixed-variant);
+  
+  --animate-marquee: marquee 50s linear infinite;
+  --animate-float: float 8s ease-in-out infinite;
+  
+  @keyframes marquee {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--on-surface);
+  font-family: var(--font-body), sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-emerald {
+  background: rgba(6, 78, 59, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.product-card-hover {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+.product-card-hover:hover {
+  transform: scale(1.02) translateY(-8px);
+  box-shadow: 0 20px 40px -15px rgba(0, 53, 39, 0.15);
+}
+
+.floating-particle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: 1;
+  opacity: 0.35;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Material Icons custom baseline alignment */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
 }
